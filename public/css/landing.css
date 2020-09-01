@@ -1,77 +1,117 @@
 .landing-container {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-	z-index: 100;
-	pointer-events: none;
+   display: none;
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   -webkit-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   overflow: hidden;
+   z-index: 100;
+   pointer-events: none;
 }
 
 .landing-container div {
-  width: 100%;
-  height: 50%;
-  -webkit-transition: all 0.9s ease-in-out;
-  transition: all 0.9s ease-in-out;
+   width: 100%;
+   height: 50%;
+   -webkit-transition: all 0.9s ease-in-out;
+   transition: all 0.9s ease-in-out;
 }
 
 #cover-top {
-  -webkit-transform-origin: bottom left;
-  transform-origin: bottom left;
+   -webkit-transform-origin: bottom left;
+   transform-origin: bottom left;
 }
 
-#cover-top svg, #cover-bottom svg {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(76, 8, 255, 0.7)), to(transparent)), repeating-linear-gradient(45deg, #b700ff 0%, #b700ff 2.5%, transparent 5%, transparent 10%), #d880ff repeating-linear-gradient(-45deg, rgba(183, 0, 255, 0.5) 0%, rgba(183, 0, 255, 0.5) 2.5%, transparent 5%, transparent 10%);
-  background: linear-gradient(90deg, rgba(76, 8, 255, 0.7), transparent), repeating-linear-gradient(45deg, #b700ff 0%, #b700ff 2.5%, transparent 5%, transparent 10%), #d880ff repeating-linear-gradient(-45deg, rgba(183, 0, 255, 0.5) 0%, rgba(183, 0, 255, 0.5) 2.5%, transparent 5%, transparent 10%);
-  font-size: 7em;
+#cover-top svg,
+#cover-bottom svg {
+   background: -webkit-gradient(
+         linear,
+         left top,
+         right top,
+         from(rgba(76, 8, 255, 0.7)),
+         to(transparent)
+      ),
+      repeating-linear-gradient(
+         45deg,
+         #b700ff 0%,
+         #b700ff 2.5%,
+         transparent 5%,
+         transparent 10%
+      ),
+      #d880ff
+         repeating-linear-gradient(
+            -45deg,
+            rgba(183, 0, 255, 0.5) 0%,
+            rgba(183, 0, 255, 0.5) 2.5%,
+            transparent 5%,
+            transparent 10%
+         );
+   background: linear-gradient(90deg, rgba(76, 8, 255, 0.7), transparent),
+      repeating-linear-gradient(
+         45deg,
+         #b700ff 0%,
+         #b700ff 2.5%,
+         transparent 5%,
+         transparent 10%
+      ),
+      #d880ff
+         repeating-linear-gradient(
+            -45deg,
+            rgba(183, 0, 255, 0.5) 0%,
+            rgba(183, 0, 255, 0.5) 2.5%,
+            transparent 5%,
+            transparent 10%
+         );
+   font-size: 7em;
 }
 
 #cover-top svg rect {
-  -webkit-mask: url(#mask-top);
-  mask: url(#mask-top);
+   -webkit-mask: url(#mask-top);
+   mask: url(#mask-top);
 }
 
-#cover-top svg text, #cover-bottom svg text {
-  fill: white;
-  -webkit-transform: translateY(9%);
-  transform: translateY(9%);
+#cover-top svg text,
+#cover-bottom svg text {
+   fill: white;
+   -webkit-transform: translateY(9%);
+   transform: translateY(9%);
 }
 
 #cover-bottom {
-  -webkit-transform-origin: top right;
-  transform-origin: top right;
+   -webkit-transform-origin: top right;
+   transform-origin: top right;
 }
 
 #cover-bottom svg rect {
-  -webkit-mask: url(#mask-bottom);
-  mask: url(#mask-bottom);
+   -webkit-mask: url(#mask-bottom);
+   mask: url(#mask-bottom);
 }
 
 #cover-top.activate-top-animation {
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -webkit-transform-origin: bottom left;
-  transform-origin: bottom left;
-  opacity: 0;
+   -webkit-transform: rotate(-90deg);
+   transform: rotate(-90deg);
+   -webkit-transform-origin: bottom left;
+   transform-origin: bottom left;
+   opacity: 0;
 }
 
 #cover-bottom.activate-bottom-animation {
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -webkit-transform-origin: top right;
-  transform-origin: top right;
-  opacity: 0;
+   -webkit-transform: rotate(-90deg);
+   transform: rotate(-90deg);
+   -webkit-transform-origin: top right;
+   transform-origin: top right;
+   opacity: 0;
 }
 
 @media screen and (max-width: 736px) {
-  #cover-top svg, #cover-bottom svg {
-    font-size: 3em;
-  }
-  #cover-top svg text, #cover-bottom svg text {
-    fill: white;
-    -webkit-transform: translateY(3.5%);
-    transform: translateY(3.5%);
-  }
+   #cover-top svg,
+   #cover-bottom svg {
+      font-size: 3em;
+   }
+   #cover-top svg text,
+   #cover-bottom svg text {
+      fill: white;
+      -webkit-transform: translateY(3.5%);
+      transform: translateY(3.5%);
+   }
 }

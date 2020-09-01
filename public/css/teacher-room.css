@@ -1,519 +1,530 @@
 body {
-    overflow: hidden;
+   overflow: hidden;
 }
 
 nav {
-    width: auto;
+   width: auto;
 }
 
-#dashboard, #room, #practice, #notifications {
-	 display: none;
+#dashboard,
+#room,
+#practice,
+#notifications {
+   display: none;
 }
 
 .container {
-    height: 92vh;
-    width: 100%;
-    padding: 3% 4%;
+   height: 92vh;
+   width: 100%;
+   padding: 3% 4%;
 }
 
 main {
-    background: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    -webkit-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+   background: white;
+   width: 100%;
+   height: 100%;
+   border-radius: 15px;
+   -webkit-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+   box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
 }
 
 .header {
-    background: lightslategray;
-    height: 12%;
-    width: 100%;
-    border-radius: 15px 15px 0px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
+   background: lightslategray;
+   height: 12%;
+   width: 100%;
+   border-radius: 15px 15px 0px 0px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   position: relative;
 }
 
 .header-buttons {
-    position: absolute;
-    right: 2%;
+   position: absolute;
+   right: 2%;
 }
 
 .button-3 {
-    font-size: 1.1rem;
-    outline: 0;
-    padding: 5px 15px;
-    background: lightslategray;
-    border: 2px solid white;
-    color: white;
-    border-radius: 8px;
+   font-size: 1.1rem;
+   outline: 0;
+   padding: 5px 15px;
+   background: lightslategray;
+   border: 2px solid white;
+   color: white;
+   border-radius: 8px;
 }
 
 .button-3:hover {
-    background: white;
-    color: lightslategray;
+   background: white;
+   color: lightslategray;
 }
 
 .button-4 {
-    font-size: 1.1rem;
-    outline: 0;
-    padding: 5px 15px;
-    background: lightslategray;
-    border: 2px solid white;
-    color: white;
-    border-radius: 8px;
+   font-size: 1.1rem;
+   outline: 0;
+   padding: 5px 15px;
+   background: lightslategray;
+   border: 2px solid white;
+   color: white;
+   border-radius: 8px;
 }
 
 .button-4:hover {
-    background: lightcoral;
-    color: white;
-    border: 2px solid lightcoral;
+   background: lightcoral;
+   color: white;
+   border: 2px solid lightcoral;
 }
 
 #disconnect {
-    margin-left: 10px;
+   margin-left: 10px;
 }
 
 .room {
-    height: 88%;
-    display: flex;
+   height: 88%;
+   display: flex;
 }
 
 .student-selector-panel {
-    background: lightcyan;
-    width: 20%;
-    height: 100%;
-    -webkit-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75);
-    border-bottom-left-radius: 15px;
-    display: flex;
-    flex-direction: column;
+   background: lightcyan;
+   width: 20%;
+   height: 100%;
+   -webkit-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75);
+   box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75);
+   border-bottom-left-radius: 15px;
+   display: flex;
+   flex-direction: column;
 }
 
 .student-selector {
-    height: 90%;
-    overflow: auto;
+   height: 90%;
+   overflow: auto;
 }
 
 /* Hide scrollbar */
 .student-selector::-webkit-scrollbar {
-    display: none;
+   display: none;
 }
 
 .student-list li {
-    font-size: 1.2rem;
-    list-style: none;
-    border-top: 2px solid white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+   font-size: 1.2rem;
+   list-style: none;
+   border-top: 2px solid white;
+   padding: 15px 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   cursor: pointer;
 }
 
 .student-list li:first-child {
-    border-top: 0px solid white;
+   border-top: 0px solid white;
 }
 
 .student-list li:last-child {
-    border-bottom: 2px solid white;
+   border-bottom: 2px solid white;
 }
 
 .selected {
-    background: lightgoldenrodyellow;
+   background: lightgoldenrodyellow;
 }
 
 .student-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .student-icons img {
-    height: 32px;
+   height: 32px;
 }
 
 /* To hide the completed icon */
 .hidden {
-    visibility: hidden;
+   visibility: hidden;
 }
 
 .green-dot {
-    width: 12px;
-    height: 12px;
-    background: #04d400;
-    border-radius: 50%;
-    margin-left: 10px;
+   width: 12px;
+   height: 12px;
+   background: #04d400;
+   border-radius: 50%;
+   margin-left: 10px;
 }
 
 .student-count {
-    width: 100%;
-    height: 10%;
-    background: lightslategray;
-    border-bottom-left-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+   width: 100%;
+   height: 10%;
+   background: lightslategray;
+   border-bottom-left-radius: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
 }
 
 .student-count h1 {
-    margin: 0px 0px 0px 5px;
+   margin: 0px 0px 0px 5px;
 }
 
 .panel-selector {
-    background: lightblue;
-    width: 5%;
+   background: lightblue;
+   width: 5%;
 }
 
 .panel-selector div {
-    height: 33.33%;
-    width: 100%;
-    cursor: pointer;
-    -webkit-box-shadow: inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+   height: 33.33%;
+   width: 100%;
+   cursor: pointer;
+   -webkit-box-shadow: inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+   box-shadow: inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
 }
 
 .question-selector {
-    background: lightcoral;
+   background: lightcoral;
 }
 
 .code-selector {
-    background: lightseagreen;
+   background: lightseagreen;
 }
 
 .io-selector {
-    background: lightsalmon;
+   background: lightsalmon;
 }
 
 .panels {
-    width: 75%;
-    position: relative;
-    border-bottom-right-radius: 15px;
+   width: 75%;
+   position: relative;
+   border-bottom-right-radius: 15px;
 }
 
 .panels section {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    border-bottom-right-radius: 15px;
-    -webkit-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
-        inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
-        inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
-        inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   height: 100%;
+   width: 100%;
+   border-bottom-right-radius: 15px;
+   -webkit-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
+      inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
+      inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+   box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
+      inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
 }
 
 .question-panel {
-    background: white;
-    position: relative;
-    padding: 2% 3%;
+   background: white;
+   position: relative;
+   padding: 2% 3%;
 }
 
 .floating-action-button {
-    position: absolute;
-    display: flex;
-    right: 3%;
-    bottom: 4%;
-    height: 75px;
-    width: 75px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
-    -webkit-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
-    border: 3px solid white;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+   position: absolute;
+   display: flex;
+   right: 3%;
+   bottom: 4%;
+   height: 75px;
+   width: 75px;
+   border-radius: 50%;
+   background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
+   -webkit-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+   box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+   border: 3px solid white;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
 }
 
 .floating-action-button img {
-    width: 35px;
-    height: 35px;
+   width: 35px;
+   height: 35px;
 }
 
 .code-panel {
-    background: white;
-    display: flex;
-    display: none;
-    flex-direction: column;
-    padding: 2% 0% 2% 3%;
+   background: white;
+   display: flex;
+   display: none;
+   flex-direction: column;
+   padding: 2% 0% 2% 3%;
 }
 
 .code-header {
-    width: 100%;
-    height: 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+   width: 100%;
+   height: 8%;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
 }
 
 .code-header select {
-    cursor: pointer;
-    margin-right: 3%;
-    width: 15%;
-    font-family: 'Poppins', sans-serif;
+   cursor: pointer;
+   margin-right: 3%;
+   width: 15%;
+   font-family: 'Poppins', sans-serif;
 }
 
 .code-container {
-    width: 100%;
-    height: 92%;
-    display: flex;
+   width: 100%;
+   height: 92%;
+   display: flex;
 }
 
 .code-editor-container {
-    height: 100%;
-    width: 90%;
+   height: 100%;
+   width: 90%;
 }
 
 .editor-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
+   height: 100%;
+   width: 100%;
+   position: relative;
 }
 
 #editor {
-    width: inherit !important;
-    height: inherit !important;
+   width: inherit !important;
+   height: inherit !important;
 }
 
 .code-button-container {
-    width: 10%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+   width: 10%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
 }
 
 @media only screen and (max-width: 1200px) {
-	.code-editor-container {
-		 width: 97%;
-	}
-	
-	.code-button-container {
-		 display: none;
-	}
+   .code-editor-container {
+      width: 97%;
+   }
+
+   .code-button-container {
+      display: none;
+   }
 }
 
 .io-panel {
-    background: white;
-    display: flex;
-    display: none;
-    padding: 2% 3%;
+   background: white;
+   display: flex;
+   display: none;
+   padding: 2% 3%;
 }
 
 .input-container {
-    width: 40%;
-    height: 100%;
+   width: 40%;
+   height: 100%;
 }
 
 .input-container p {
-    height: 8%;
+   height: 8%;
 }
 
 .input-container textarea {
-    height: 92%;
-    width: 100%;
-    background: #272822;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
+   height: 92%;
+   width: 100%;
+   background: #272822;
+   color: white;
+   font-size: 1.2rem;
+   padding: 10px;
 }
 
 .io-button-container {
-    width: 20%;
-    height: 100%;
-    padding: 0% 2%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   width: 20%;
+   height: 100%;
+   padding: 0% 2%;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .button-container {
-    position: absolute;
-    bottom: 0;
-    height: 92%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+   position: absolute;
+   bottom: 0;
+   height: 92%;
+   width: 80%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 .button-container-top {
-    width: 100%;
-    height: 35%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+   width: 100%;
+   height: 35%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
 }
 
 .button-container div button {
-    width: 100%;
+   width: 100%;
 }
 
-
 .button-container-bottom {
-    height: 35%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+   height: 35%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
 }
 
 .button-1 {
-    font-family: 'Poppins', sans-serif;
-    padding: 15px 20px;
-    text-transform: uppercase;
-    background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
-    border-width: 0px;
-    border-radius: 0.5rem;
-    color: white;
-    cursor: pointer;
+   font-family: 'Poppins', sans-serif;
+   padding: 15px 20px;
+   text-transform: uppercase;
+   background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
+   border-width: 0px;
+   border-radius: 0.5rem;
+   color: white;
+   cursor: pointer;
 }
 
 .output-container {
-    width: 40%;
-    height: 100%;
+   width: 40%;
+   height: 100%;
 }
 
 .output-container p {
-    height: 8%;
+   height: 8%;
 }
 
 .output-container textarea {
-    height: 92%;
-    width: 100%;
-    background: #272822;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
+   height: 92%;
+   width: 100%;
+   background: #272822;
+   color: white;
+   font-size: 1.2rem;
+   padding: 10px;
 }
 
 .button-2 {
-    display: flex;
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+   display: flex;
+   height: 65px;
+   width: 65px;
+   border-radius: 50%;
+   background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
 }
 
 .button-2 img {
-    width: 35px;
-    height: 35px;
+   width: 35px;
+   height: 35px;
 }
 
 /* Animation */
 .loading-animation {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) rotate(75deg);
-          transform: translate(-50%, -50%) rotate(75deg);
-  width: 15px;
-  height: 15px;
-  border: none;
-  -webkit-animation: circle 0.4s linear infinite;
-          animation: circle 0.4s linear infinite;
+   display: none;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -50%) rotate(75deg);
+   transform: translate(-50%, -50%) rotate(75deg);
+   width: 15px;
+   height: 15px;
+   border: none;
+   -webkit-animation: circle 0.4s linear infinite;
+   animation: circle 0.4s linear infinite;
 }
 
-.loading-animation::before, .loading-animation::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  -webkit-animation: loading-animation 0.7s linear infinite;
-          animation: loading-animation 0.7s linear infinite;
+.loading-animation::before,
+.loading-animation::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   width: 15px;
+   height: 15px;
+   border-radius: 15px;
+   -webkit-animation: loading-animation 0.7s linear infinite;
+   animation: loading-animation 0.7s linear infinite;
 }
 
 .loading-animation::before {
-  -webkit-box-shadow: 15px 15px #009432, -15px -15px #0652dd;
-          box-shadow: 15px 15px #009432, -15px -15px #0652dd;
+   -webkit-box-shadow: 15px 15px #009432, -15px -15px #0652dd;
+   box-shadow: 15px 15px #009432, -15px -15px #0652dd;
 }
 
 .loading-animation::after {
-  -webkit-transform: translate(-50%, -50%) rotate(90deg);
-          transform: translate(-50%, -50%) rotate(90deg);
-  -webkit-box-shadow: 15px 15px #ffc312, -15px -15px #ea2027;
-          box-shadow: 15px 15px #ffc312, -15px -15px #ea2027;
+   -webkit-transform: translate(-50%, -50%) rotate(90deg);
+   transform: translate(-50%, -50%) rotate(90deg);
+   -webkit-box-shadow: 15px 15px #ffc312, -15px -15px #ea2027;
+   box-shadow: 15px 15px #ffc312, -15px -15px #ea2027;
 }
 
 @-webkit-keyframes loading-animation {
-  50% {
-    height: 30px;
-  }
+   50% {
+      height: 30px;
+   }
 }
 
 @keyframes loading-animation {
-  50% {
-    height: 30px;
-  }
+   50% {
+      height: 30px;
+   }
 }
 
 @-webkit-keyframes circle {
-  0% {
-    -webkit-transform: translate(-50%, -50%) rotate(75deg);
-            transform: translate(-50%, -50%) rotate(75deg);
-  }
-  100% {
-    -webkit-transform: translate(-50%, -50%) rotate(435deg);
-            transform: translate(-50%, -50%) rotate(435deg);
-  }
+   0% {
+      -webkit-transform: translate(-50%, -50%) rotate(75deg);
+      transform: translate(-50%, -50%) rotate(75deg);
+   }
+   100% {
+      -webkit-transform: translate(-50%, -50%) rotate(435deg);
+      transform: translate(-50%, -50%) rotate(435deg);
+   }
 }
 
 @keyframes circle {
-  0% {
-    -webkit-transform: translate(-50%, -50%) rotate(75deg);
-            transform: translate(-50%, -50%) rotate(75deg);
-  }
-  100% {
-    -webkit-transform: translate(-50%, -50%) rotate(435deg);
-            transform: translate(-50%, -50%) rotate(435deg);
-  }
+   0% {
+      -webkit-transform: translate(-50%, -50%) rotate(75deg);
+      transform: translate(-50%, -50%) rotate(75deg);
+   }
+   100% {
+      -webkit-transform: translate(-50%, -50%) rotate(435deg);
+      transform: translate(-50%, -50%) rotate(435deg);
+   }
 }
 
-.offline-circle{
-width: 12px;
-height: 12px;
-	border-radius:50%;
-background:red;
+.offline-circle {
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   background: red;
 
-opacity: 1.0;
+   opacity: 1;
 
--webkit-animation: animate3 1000ms ease-out;
--webkit-animation-iteration-count: infinite; 
+   -webkit-animation: animate3 1000ms ease-out;
+   -webkit-animation-iteration-count: infinite;
 
--webkit-transition: background-color 300ms linear;
--moz-transition: background-color 300ms linear;
--o-transition: background-color 300ms linear;
--ms-transition: background-color 300ms linear;
-transition: background-color 300ms linear;
+   -webkit-transition: background-color 300ms linear;
+   -moz-transition: background-color 300ms linear;
+   -o-transition: background-color 300ms linear;
+   -ms-transition: background-color 300ms linear;
+   transition: background-color 300ms linear;
 }
 
 @keyframes animate3 {
-0% {opacity: 0.1;}
-40% {opacity: 1.0;}
-60% {opacity: 1.0;}
-100% {opacity: 0.1;}
+   0% {
+      opacity: 0.1;
+   }
+   40% {
+      opacity: 1;
+   }
+   60% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0.1;
+   }
 }

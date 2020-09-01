@@ -1,4 +1,4 @@
 {
    "mongoURI": "mongodb+srv://administrator:yyQAQx7fObBljs5z@whiteboard-i0sk8.mongodb.net/test?retryWrites=true&w=majority",
-	"hackerEarthClientSecret": "317e7d373519533b180ee451f2626c7b4278235"
+   "hackerEarthClientSecret": "317e7d373519533b180ee451f2626c7b4278235"
 }

@@ -1,3 +1,3 @@
 setTimeout(() => {
-	window.location.href = '/dashboard';
+   window.location.href = '/dashboard';
 }, 3000);
