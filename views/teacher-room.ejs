@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Room</title>
+
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="../css/teacher-room.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+	</script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+
+
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<h1 class="header-1">whiteboard.io</h1>
+			<nav>
+				<ul class="nav-items" data-tag="room-list">
+					<li id="dashboard">
+						<a href="/dashboard">Dashboard</a>
+					</li>
+					<li id="room">
+						<a href="">Room</a>
+					</li>
+					<li id="practice">
+						<a href="">Practice</a>
+					</li>
+					<li id="notifications">
+						<div class="notification-nav-container">
+							<a href="">Notifications</a>
+							<div class="red-dot">10</div>
+						</div>
+					</li>
+					<li id="logout">
+						<a href="/logout">Logout</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+<span id="room-language" style="display:none"><%= selectedRoom.language %></span>
+	<div class="container">
+		<main>
+			<div class="header">
+				<h1 class="header-1">
+					<%= selectedRoom.roomName %>
+				</h1>
+				<div class="header-buttons">
+					<button id="end-typing" class="button-3">
+						End Typing
+					</button>
+					<button id="disconnect" class="button-4">
+						Disconnect
+					</button>
+				</div>
+			</div>
+			<span id="room-id" style="display:none"><%= selectedRoom.roomId %></span>
+			<span id="room-email" style="display:none"><%= currentUser.email %></span>
+			<span id="room-teacherid" style="display:none"><%= currentUser._id %></span>
+			<span id="room-username" style="display:none"><%= currentUser.username %></span>
+			<span id="room-designation" style="display:none"><%= currentUser.designation %></span>
+			<div class="room">
+				<aside class="student-selector-panel">
+					<div class="student-selector">
+						<ul class="student-list">
+							<% selectedRoom.students.forEach((student)=> { %>
+								<li onclick="selectStudent(this)">
+									<%= student %>
+										<div class="student-icons">
+											<img src="img/completed.png" alt="Completed" class="hidden" 														id="complete" />
+											<div class="green-dot"></div>
+										</div>
+								</li>
+								<% }) %>
+						</ul>
+					</div>
+					<div class="student-count">
+						<div class="green-dot"></div>
+						<h1 class="header-3">0</h1>
+					</div>
+				</aside>
+				<aside class="panel-selector">
+					<div onclick="selectQuestion()" class="question-selector"></div>
+					<div onclick="selectCode()" class="code-selector"></div>
+					<div onclick="selectIO()" class="io-selector"></div>
+				</aside>
+				<div class="panels">
+					<section class="question-panel">
+						<h1 class="header-1">Question:</h1>
+						<p class="header-2" id="question" contenteditable="true">
+							Question here....
+						</p>
+						<div onclick="selectCode()" class="floating-action-button">
+							<img src="../img/edit.png" alt="Edit Question" title="Edit Question" />
+						</div>
+					</section>
+					<section class="code-panel">
+						<div class="code-header">
+							<p class="header-2" id="header">Editor:</p>
+							<select id="theme-selector" name="theme" id="theme">
+								<option value="light">Light</option>
+								<option value="dark" selected>Dark</option>
+								<option value="black">Black</option>
+							</select>
+						</div>
+						<div class="code-container">
+							<div class="code-editor-container">
+								<div class="editor-container">
+									<div id="editor"></div>
+								</div>
+							</div>
+							<div class="code-button-container">
+								<div onclick="selectQuestion()" class="button-2">
+									<img src="../img/question.png" alt="View Question" title="View Question" />
+								</div>
+								<div class="button-2">
+									<img src="../img/play.png" alt="Run Code" title="Run Code" />
+								</div>
+								<div class="button-2">
+									<img src="../img/download1.png" alt="Download" title="Download" />
+								</div>
+								<div class="button-2">
+									<img src="../img/upload.png" alt="Post Code" title="Post Code" />
+								</div>
+							</div>
+						</div>
+						<div class=""></div>
+					</section>
+					<section class="io-panel">
+						<div class="input-container">
+							<p class="header-2">Input:</p>
+							<textarea name="input" id="input" cols="30" rows="10"></textarea>
+						</div>
+						<div class="io-button-container">
+							<div class="button-container">
+								<div class="button-container-top">
+									<button onclick="selectCode()" class="button-1">
+										Edit Code
+									</button>
+									<button id="run" class="button-1">Run</button>
+								</div>
+								<div class="loading-animation"></div>
+								<div class="button-container-bottom">
+									<button class="button-1">
+										Download
+									</button>
+									<button class="button-1" id="post-button">Post</button>
+								</div>
+							</div>
+						</div>
+						<div class="output-container">
+							<p class="header-2">Output:</p>
+							<textarea readonly name="output" id="output" cols="30" rows="10"></textarea>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"></script>
+	<script src="../js/teacher-room.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+	</script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+</body>
+
+</html>

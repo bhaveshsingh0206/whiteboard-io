@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Join a Room</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/room.css" />
+        
+		<script
+		  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+		</script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <h1 class="header-1">whiteboard.io</h1>
+                <nav>
+                    <ul class="nav-items" data-tag="room-list">
+                        <li id="dashboard"><a href="/dashboard">Dashboard</a></li>
+                        <li id="room" class="nav-selected"><a class="nav-selected" href="">Room</a></li>
+                        <li id="practice">
+									<a href="">Practice</a>
+								</li> 
+							   <li id="notifications">
+                            <div class="notification-nav-container">
+                                <a href="">Notifications</a>
+                                <div class="red-dot">10</div>
+                            </div>
+                        </li>
+                        <li id="logout"><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+			<span style="display:none" class="designation"><%= currentUser.designation %></span>
+            <main>
+                <div class="header">
+                    <h1 class="header-1">Available Rooms</h1>
+					<% if (currentUser.designation=='Teacher') { %>
+						<div class="create-room">
+                        <button
+                            onclick="showCreateRoomDialog(this)"
+                            class="button-3"
+                        >
+                            Create Room
+                        </button>
+                    </div>
+					<% } %> 
+                </div>
+                <div class="rooms">
+                    <div class="room-selection">
+                        <ul class="room-list">
+                            
+                        </ul>
+                    </div>
+                    <div class="room-count">
+                        <div class="green-dot"></div>
+                        <h1 class="header-3">0</h1>
+                    </div>
+                    <div class="room-body">
+							  <div class="room-information">
+                            <h1 id="room-header" class="header-1"></h1>
+                            <p id="room-description" class="header-2">
+                              
+                            </p>
+                            <input
+										  style="display:none;"
+                                class="join-room"
+                                id="room-join"
+                                type="submit"
+                                value="Join Room"
+                            />
+                        </div>
+                        <div class="room-language">
+                            
+                        </div>
+                        <div class="create-room-dialog">
+                            <h1 class="header-1">Create a Room</h1>
+                            <input
+                                type="text"
+                                name="room-name"
+                                id="room-name"
+                                placeholder="Enter the name of the room"
+                                required
+                            />
+                            <input
+                                type="text"
+                                name="room-password"
+                                id="room-password"
+                                placeholder="Enter the password for the room"
+                                required
+                            />
+                            <select
+                                name="room-language"
+                                id="room-language"
+                                required
+                            >
+                                <option value="" selected disabled
+                                    >Select the language</option
+                                >
+                                <option value="c">C</option>
+                                <option value="java">Java</option>
+                                <option value="python">Python</option>
+                            </select>
+                            <input type="submit" value="Create Room" class="createRoom"/>
+                            <!-- <button>Create Room</button> -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+		<script src="js/room.js" type="text/javascript"></script>
+		<script
+		  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+		</script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap');
+
+:root {
+    --nav-unselected: rgb(150, 150, 150);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, rgb(26, 109, 255), transparent),
+        repeating-linear-gradient(
+            45deg,
+            rgb(183, 0, 255) 0%,
+            rgb(183, 0, 255) 2.5%,
+            transparent 5%,
+            transparent 10%
+        ),
+        rgb(216, 128, 255)
+            repeating-linear-gradient(
+                -45deg,
+                rgba(183, 0, 255, 0.5) 0%,
+                rgb(183, 0, 255, 0.5) 2.5%,
+                transparent 5%,
+                transparent 10%
+            );
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Font Sizes */
+.header-0 {
+    font-size: 2em;
+}
+
+.header-1 {
+    font-size: 1.5em;
+}
+
+.header-2 {
+    font-size: 1.2em;
+}
+
+.header-3 {
+    font-size: 1em;
+}
+
+/* Header */
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 10px 15px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 15px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 15px -11px rgba(0, 0, 0, 0.75);
+}
+
+.header-container {
+    position: relative;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 5%;
+}
+
+/* Nav Bar */
+nav {
+    width: 40%;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items li {
+    list-style: none;
+    font-size: 1.1em;
+    color: var(--nav-unselected);
+}
+
+.nav-items li a {
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    color: var(--nav-unselected);
+}
+
+#getNotif, #dashboard {
+	cursor: pointer;
+}
+
+.nav-items li a.nav-selected {
+    color: black;
+    font-size: 1.05em;
+    transform: scale(1.05);
+}
+
+.nav-space {
+    height: 8vh;
+    width: 100%;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.notification-nav-container {
+    position: relative;
+    display: flex;
+}
+
+.red-dot {
+    background: red;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    font-size: 10px;
+}
+
+@media screen and (max-width: 1268px) {
+    nav {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .header-0 {
+        font-size: 1.5em;
+    }
+
+	 .header-1 {
+        font-size: 1.2em;
+    }
+
+    .header-2 {
+        font-size: 1em;
+    }
+
+    .header-3 {
+        font-size: 0.8em;
+    }
+	
+	 /* Only keeping logout */
+    nav {
+        width: auto;
+    }
+
+    #dashboard,
+    #room,
+    #practice,
+    #notifications {
+        display: none;
+    }
+
+    #logout {
+        color: black;
+    }
+
+    #logout a {
+        color: black;
+    }
+}

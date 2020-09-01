@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/login.css" />
+	<link rel="stylesheet" href="css/landing.css" />
+	<script src="js/login-quotes.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<title>Login</title>
+</head>
+
+<body>
+	
+	<div class="landing-container">
+         <div id="cover-top">
+            <svg height="100%" width="100%">
+               <defs>
+                  <mask id="mask-top" x="0" y="0" height="100%" width="100%">
+                     <rect
+                        x="0"
+                        y="0"
+                        height="100%"
+                        width="100%"
+                        fill="black"
+                     />
+                     <text x="50%" y="100%" text-anchor="middle">
+                        whiteboard.io
+                     </text>
+                  </mask>
+               </defs>
+               <rect x="0" y="0" height="100%" width="100%" fill="white" />
+            </svg>
+         </div>
+         <div id="cover-bottom">
+            <svg height="100%" width="100%">
+               <defs>
+                  <mask id="mask-bottom" x="0" y="0" height="100%" width="100%">
+                     <rect
+                        x="0"
+                        y="0"
+                        height="100%"
+                        width="100%"
+                        fill="black"
+                     />
+                     <text x="50%" y="0%" text-anchor="middle">
+                        whiteboard.io
+                     </text>
+                  </mask>
+               </defs>
+               <rect x="0" y="0" height="100%" width="100%" fill="white" />
+            </svg>
+         </div>
+      </div>
+	
+	
+	<div class="container">
+		<main>
+			<section class="quote">
+				<h1 class="header-1">Welcome to whiteboard.io</h1>
+				<p id="quote" class="header-2"></p>
+				<h1 class="header-2">Developed by DJ Callback</h1>
+			</section>
+			<section class="login">
+				<div class="login-header">
+					<h1 class="header-0">Login</h1>
+					<div class="underline"></div>
+				</div>
+				<form id="form" method="POST" action="/login-student">
+					<select name="designation" id="designation" required autofocus>
+						<option value="teacher">Teacher</option>
+						<option value="student" selected>Student</option>
+					</select>
+					<div class="input-with-icon">
+						<input type="text" placeholder="Enter your sap id" id="username" name="username" required />
+						<img class="icon" src="img/userid.png" alt="User Name" />
+					</div>
+					<div class="input-with-icon">
+						<input type="password" placeholder="Enter your password" id="password" name="password" required />
+						<img class="icon" src="img/password.png" alt="Password" />
+					</div>
+					
+
+					<button type="submit" id="login">Login</button>
+				</form>
+				<div class="forgot-password">
+						<button onclick="myFunction()" id="forgot-password" title="Forgot Password">
+							Forgot Password
+						</button>
+					</div>
+				<% if(out && out.length>0){ %>
+					<div id="succ">
+						<%= out %>
+					</div>
+					<% } %>
+				<% if(failureFlash && failureFlash.length>0){ %>
+					<div id="fail">
+						<%= failureFlash %>
+					</div>
+					<% } %>
+				<% if(mail && mail.length>0){ %>
+					<div id="succ">
+						<%= mail %>
+					</div>
+					<% } %>
+			</section>
+		</main>
+	</div>
+	<script src="main.js"></script>
+	<script src="js/login.js" type="text/javascript"></script>
+</body>
+
+</html>

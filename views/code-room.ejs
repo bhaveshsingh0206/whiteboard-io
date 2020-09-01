@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Code Room</title>
+
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/code-room.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+		</script>
+		<!-- <script src="./node_modules/bundle.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+		  <!-- <script src="/js/ace-collab-ace.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- <script src="/js/editor_contents.js" type="text/javascript" charset="utf-8"></script> -->
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <h1 class="header-1">whiteboard.io</h1>
+                <nav>
+                    <ul class="nav-items" data-tag="room-list">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/dashboard">Room</a></li>
+                        <li><a href="/practice">Practice</a></li>
+                        <li><a href="">Notifications</a></li>
+                        <li><a href="/">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <main>
+                <div class="header">
+                    <h1 class="header-1">Code Room</h1>
+                </div>
+                <div class="room">
+                    <aside class="panel-selector">
+                        <div onclick="selectCode()" class="code-selector"></div>
+                        <div onclick="selectIO()" class="io-selector"></div>
+                    </aside>
+                    <div class="panels">
+                        <section class="code-panel">
+                            <div class="code-header">
+                                <p class="header-2">Editor:</p>
+								<p id="userid" style="display: none;"><%= login %></p>
+                                <select name="theme" id="language">
+                                    <option value="c" selected>C</option>
+                                    <option value="java" >Java</option>
+                                    <option value="py">Python</option>
+                                </select>
+                            </div>
+                            <div class="code-container">
+                                <div class="code-editor-container">
+                                    <div class="editor-container">
+                                        <div id="editor"></div>
+                                    </div>
+                                </div>
+                                <div class="code-button-container">
+                                    <div class="button-2">
+                                        <img
+                                            src="../img/play.png"
+                                            alt="Run Code"
+                                            title="Run Code"
+                                        />
+                                    </div>
+                                    <div class="button-2">
+                                        <img
+                                            src="../img/download1.png"
+                                            alt="Download"
+                                            title="Download"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=""></div>
+                        </section>
+                        <section class="io-panel">
+                            <div class="input-container">
+                                <p class="header-2">Input:</p>
+                                <textarea
+                                    name="input"
+                                    id="input"
+                                    cols="30"
+                                    rows="10"
+                                ></textarea>
+                            </div>
+                            <div class="io-button-container">
+                                <div class="button-container">
+                                    <div class="button-container-top">
+                                        <button
+                                            onclick="selectCode()"
+                                            class="button-1"
+                                        >
+                                            Edit Code
+                                        </button>
+                                        <button class="button-1" id="run">Run</button>
+                                    </div>
+                                    <div class="animation">
+                                        <div class="animation-box"></div>
+                                        <div class="animation-box"></div>
+                                    </div>
+                                    <div class="button-container-bottom">
+                                        <button class="button-1" onclick='getId()'>
+                                            Download
+                                        </button>
+                                        <button
+                                            onclick="clearInput()"
+                                            class="button-1"
+                                        >
+                                            Clear Inputs
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="output-container">
+                                <p class="header-2">Output:</p>
+                                <textarea
+                                    name="output"
+                                    id="output"
+                                    cols="30"
+                                    rows="10"
+                                ></textarea>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="../js/code-room.js" type="text/javascript"></script>
+        
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    </body>
+</html>

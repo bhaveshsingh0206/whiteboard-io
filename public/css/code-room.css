@@ -1,0 +1,385 @@
+body {
+    overflow: hidden;
+}
+
+.container {
+    height: 92vh;
+    width: 100%;
+    padding: 3% 4%;
+}
+
+main {
+    background: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.75);
+}
+
+.header {
+    background: lightslategray;
+    height: 12%;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.room {
+    height: 88%;
+    display: flex;
+}
+
+.panel-selector {
+    background: lightblue;
+    width: 5%;
+    border-bottom-left-radius: 15px;
+}
+
+.panel-selector div {
+    height: 50%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.code-selector {
+    background: lightseagreen;
+}
+
+.io-selector {
+    background: lightsalmon;
+    border-bottom-left-radius: 15px;
+}
+
+.panels {
+    width: 95%;
+    position: relative;
+    border-bottom-right-radius: 15px;
+}
+
+.panels section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border-bottom-right-radius: 15px;
+    -webkit-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
+        inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
+        inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 10px 15px -15px rgba(0, 0, 0, 0.75),
+        inset 10px 0px 15px -15px rgba(0, 0, 0, 0.75);
+}
+
+.code-panel {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0% 2% 3%;
+}
+
+.code-header {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.code-header select {
+    cursor: pointer;
+    margin-right: 3%;
+    width: 15%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.code-container {
+    width: 100%;
+    height: 92%;
+    display: flex;
+}
+
+.code-editor-container {
+    height: 100%;
+    width: 90%;
+}
+
+.editor-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#editor {
+    width: inherit !important;
+    height: inherit !important;
+}
+
+.code-button-container {
+    width: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.io-panel {
+    background: white;
+    display: flex;
+    display: none;
+    padding: 2% 3%;
+}
+
+.input-container {
+    width: 40%;
+    height: 100%;
+}
+
+.input-container p {
+    height: 8%;
+}
+
+.input-container textarea {
+    height: 92%;
+    width: 100%;
+    background: #272822;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.io-button-container {
+    width: 20%;
+    height: 100%;
+    padding: 0% 2%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    height: 92%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.button-container-top {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-container div button {
+    width: 100%;
+}
+
+.animation {
+    height: 30%;
+}
+
+.button-container-bottom {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-1 {
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
+    border-width: 0px;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.output-container {
+    width: 40%;
+    height: 100%;
+}
+
+.output-container p {
+    height: 8%;
+}
+
+.output-container textarea {
+    height: 92%;
+    width: 100%;
+    background: #272822;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.button-2 {
+    display: flex;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgb(76, 8, 255), rgb(183, 0, 255));
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-2 img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Animation */
+.animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.animation-box {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #ff8801, #ffe862);
+}
+
+.animation-box:nth-child(1) {
+    animation: animate1 1s linear infinite;
+}
+
+.animation-box:nth-child(2) {
+    animation: animate2 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+    }
+    12.5% {
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 30px;
+    }
+    25% {
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 30px;
+    }
+    37.5% {
+        top: 0;
+        left: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    50% {
+        top: 0;
+        left: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    62.5% {
+        top: 0;
+        left: 30px;
+        width: 30px;
+        height: 60px;
+    }
+    75% {
+        top: 0;
+        left: 30px;
+        width: 30px;
+        height: 60px;
+    }
+    87.5% {
+        top: 30px;
+        left: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    100% {
+        top: 30px;
+        left: 30px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        right: 0;
+        bottom: 0;
+        width: 30px;
+        height: 30px;
+    }
+    12.5% {
+        right: 0;
+        bottom: 0;
+        width: 30px;
+        height: 30px;
+    }
+    25% {
+        right: 0;
+        bottom: 0;
+        width: 60px;
+        height: 30px;
+    }
+    37.5% {
+        right: 0;
+        bottom: 0;
+        width: 60px;
+        height: 30px;
+    }
+    50% {
+        right: 30px;
+        bottom: 0;
+        width: 30px;
+        height: 30px;
+    }
+    62.5% {
+        right: 30px;
+        bottom: 0;
+        width: 30px;
+        height: 30px;
+    }
+    75% {
+        right: 30px;
+        bottom: 0;
+        width: 30px;
+        height: 60px;
+    }
+    87.5% {
+        right: 30px;
+        bottom: 0;
+        width: 30px;
+        height: 60px;
+    }
+    100% {
+        right: 30px;
+        bottom: 30px;
+        width: 30px;
+        height: 30px;
+    }
+}

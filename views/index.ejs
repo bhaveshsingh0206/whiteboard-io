@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Dashboard</title>
+
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/index.css" />
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"></script>
+</head>
+
+<body>
+	<header>
+            <div class="header-container">
+                <h1 class="header-1">whiteboard.io</h1>
+                <nav>
+                    <ul class="nav-items">
+                        <li id="dashboard" class="nav-selected">
+                            <a class="nav-selected">Dashboard</a>
+                        </li>
+                        <li id="room"><a href="/room">Room</a></li>
+                        <li id="practice"><a href="/practice">Practice</a></li>
+                        <li id="notifications">
+                            <div class="notification-nav-container">
+										<a id="getNotif">Notifications</a>
+										<div class="red-dot">&nbsp;</div>
+									</div>
+                        </li>
+                        <li id="logout"><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav>
+                <div class="progress-container">
+                    <div
+                        id="progress-bar"
+                        class="progress-bar progress-hide progress-infinite"
+                    ></div>
+                </div>
+            </div>
+        </header>
+
+	
+	<div class="container">
+            <aside class="stats">
+                <div class="stat">
+                    <div class="stat-section-1">
+							<p id="userid" style="display: none;"><%= currentUser._id %></p>
+							<p id="name" class="header-2"><%= currentUser.name %></p>
+							<p id="username" data-classid="<%= currentUser.classId %>" class="header-3"><%= currentUser.username %></p>
+							<p id="class-info" class="header-3">&nbsp;</p>
+							<p id="designation" class="header-3"><%= currentUser.designation %></p>
+						</div>
+						<div class="stat-section-2">
+							<p id="my-posts-header" class="header-3">Batch Posts</p>
+							<p id="my-posts" class="header-1">&nbsp;</p>
+						</div>
+						 <div class="stat-section-3">
+							<p id="community-posts-header" class="header-3">All Posts</p>
+							<p id="community-posts" class="header-1">&nbsp;</p>
+						</div>
+                </div>
+            </aside>
+		
+		<!-- All posts will be here -->
+		<main class="posts">
+					<% if (currentUser.designation == "Teacher") { %>
+						<div class="selector">
+                    <select name="class-selector" id="class-selector">
+                        <option value="all" selected>All Posts</option>
+                    </select>
+                	</div>
+					<% } %>	
+			<div class="posts-container"></div>
+            </main>
+		<aside class="notifications">
+                <div class="notification">
+                    <div class="notification-header">
+                        <p class="header-2">Notification Center</p>
+                    </div>
+                    <div class="notification-body">
+                        <p class="header-3">To:</p>
+                        <input
+                            type="text"
+                            name="notif-to-address"
+                            id="notif-to-address"
+                        />
+                        <p class="header-3">Code:</p>
+                        <textarea
+                            name="notif-code"
+                            id="notif-code"
+                            cols="30"
+                            rows="8"
+                        ></textarea>
+                        <p class="header-3">Comments:</p>
+                        <textarea
+                            name="notif-comments"
+                            id="notif-comments"
+                            cols="30"
+                            rows="5"
+                        ></textarea>
+                    </div>
+                    <div class="notification-footer">
+                        <button id="clear" class="button-1">Clear</button>
+                        <button id="send" class="button-1">Send</button>
+                    </div>
+                </div>
+            </aside>
+	</div>
+	
+	<script src="main.js"></script>
+	<script src="js/index.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="/js/home.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</body>
+
+</html>

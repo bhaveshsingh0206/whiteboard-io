@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      
+        <link rel="stylesheet" href="css/login.css" />
+      <link
+         href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+         rel="stylesheet"
+      />
+      <title>Login</title>
+   </head>
+   <body>
+      <div class="middle">
+         <div class="container1">
+            <h2>Sign Up</h2>
+			 <form method="POST" action="/register">
+            <div class="inputWithIcon">
+               <input type="number" placeholder="SAP ID" autofocus name="sapid"/>
+               <i class="fas fa-id-badge" aria-hidden="true"></i>
+            </div>
+
+            <div class="inputWithIcon">
+               <input type="email" placeholder="Email" name="email"/>
+               <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+
+            <div class="inputWithIcon">
+               <input type="password" placeholder="Password" name="password"/>
+               <i class="fas fa-lock" aria-hidden="true"></i>
+            </div>
+            <div class="inputWithIcon">
+               <input type="password" placeholder="Confirm Password" name="confirm_password"/>
+               <i class="fas fa-lock" aria-hidden="true"></i>
+            </div>
+			 <div class="inputWithIcon">
+               <input type="text" placeholder="Year" name="class_name"/>
+               <i class="fas fa-lock" aria-hidden="true"></i>
+            </div>
+			 <div class="inputWithIcon">
+               <input type="text" placeholder="Batch" name="batch"/>
+               <i class="fas fa-lock" aria-hidden="true"></i>
+            </div>
+         
+         <div class="buttons">
+            <button type="submit" id="right">Sign Up</button>
+			  <a href="/login"><button type="button" id="left">Sign In</button></a>
+         </div>
+		  </form>
+		</div>
+      </div>
+      <script src="main.js"></script>
+   </body>
+</html>
