@@ -19,7 +19,8 @@ const express = require('express'),
    jwt = require('jwt-simple'),
    hackerEarth = require('hackerearth-node'),
    config = require('config'),
-   connectDB = require('./config/db');
+   connectDB = require('./config/db'),
+   cors = require('cors');
 
 const HACKER_EARTH_CLIENT_SECRET_KEY = config.get('hackerEarthClientSecret');
 
@@ -66,6 +67,16 @@ app.use((req, res, next) => {
    res.locals.login = req.isAuthenticated();
    next();
 });
+
+app.use(
+   cors({
+      allowedHeaders: ['sessionId', 'Content-Type'],
+      exposedHeaders: ['sessionId'],
+      origin: '*',
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      preflightContinue: false,
+   })
+);
 
 // Routers
 app.use('/post', postRouter);

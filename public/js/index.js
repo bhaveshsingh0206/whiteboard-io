@@ -8,12 +8,13 @@ let globals = {
 };
 
 const user = {
-   id: document.querySelector('#userid').textContent,
-   name: document.getElementById('name').textContent,
-   username: document.getElementById('username').textContent,
+   id: document.querySelector('#userid').textContent.trim(),
+   name: document.getElementById('name').textContent.trim(),
+   username: document.getElementById('username').textContent.trim(),
    designation: document
       .getElementById('designation')
-      .textContent.toLowerCase(),
+      .textContent.toLowerCase()
+      .trim(),
 };
 
 // Get and set information
@@ -128,16 +129,11 @@ async function getClasses() {
    try {
       const response = await fetch(`/api/dashboard/classes/${user.id}`);
       const data = await response.json();
-      console.log(data);
       const classesArray = data.classes;
       const idsArray = data.ids;
-      console.log(idsArray);
       // Set Classes Information
       const selector = document.querySelector('#class-selector');
-      console.log(selector);
       for (let i = 0; i < classesArray.length; i++) {
-         console.log(idsArray[i]);
-         console.log(classesArray[i]);
          selector.innerHTML += `<option value="${idsArray[i]}">${classesArray[i]}</option>`;
       }
    } catch (err) {
@@ -235,7 +231,7 @@ async function getNotifications() {
 }
 
 function setPosts(posts) {
-   console.log(posts);
+   console.log(`Posts: ${posts.length}`);
    let padding = '';
    if (user.designation == 'teacher') {
       padding = 'padding';
