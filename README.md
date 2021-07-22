@@ -12,6 +12,10 @@ A Node.js/Express project for live teacher-student integrated session management
 
 ## Developers
 
+-  Bhavesh Singh [github.com/bhaveshsingh0206](https://github.com/bhaveshsingh0206)
+
+   -  Sockets Handling and Backend
+
 -  Adnan Hakim [github.com/adnanhakim](https://github.com/adnanhakim)
 
    -  UI Designing, Frontend and Dashboard Backend
@@ -24,9 +28,7 @@ A Node.js/Express project for live teacher-student integrated session management
 
    -  UI Designing, Frontend, Editor and Java Compiler
 
--  Bhavesh Singh [github.com/bhaveshsingh0206](https://github.com/bhaveshsingh0206)
 
-   -  Sockets Handling and Backend
 
 -  Rahil Desai [github.com/Rahildesai7](https://github.com/Rahildesai7)
 
